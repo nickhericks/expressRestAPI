@@ -24,5 +24,4 @@ app.get('/greetings', (req, res) => {
 
 
 
-
 app.listen(3000, () => console.log('Quote API listening on port 3000!'));
