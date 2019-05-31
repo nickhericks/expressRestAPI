@@ -2,9 +2,6 @@ const express = require('express');
 const app = express();
 const routes = require('./routes');
 
-const records = require('./records');
-
-
 
 
 // Middleware that tells express incoming data should be read as json
@@ -23,12 +20,6 @@ app.get('/greetings', (req, res) => {
 	// instead we want to send back json so we use res.json
 	res.json({greeting: 'Hello world!'});
 });
-
-
-
-
-
-
 
 
 

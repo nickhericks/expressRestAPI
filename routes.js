@@ -1,5 +1,6 @@
 const express = require('express');
 const router = express.Router();
+const records = require("./records");
 
 
 
@@ -23,8 +24,7 @@ router.get('/quotes', async (req, res) => {
 });
 
 // Send a GET request to /quotes/:id to READ(view) a quote
-router.get('/quotes/:id', async (req, res) => {
-	try {
+router.get('/quotes/:id', asyncHandler( async (req, res) => {
 		// throw new Error('Oh noooooooo!');
 		const quote = await records.getQuote(req.params.id);
 		if(quote) {
@@ -32,10 +32,7 @@ router.get('/quotes/:id', async (req, res) => {
 		} else {
 			res.status(404).json({message: 'Quote not found.'});
 		}
-	} catch(err) {
-		res.status(500).json({error: err.message});
-	}
-});
+}));
 
 
 // Send a POST request to /quotes to CREATE a new quote
@@ -69,24 +66,22 @@ router.put('/quotes/:id', asyncHandler( async (req, res) => {
 	}
 }));
 
+
 // Send a DELETE request to /quotes/:id to DELETE a quote
-router.delete("/quotes/:id", async (req, res, next) => {
-  try {
-    throw new Error('Oh noooooooo!');
-    const quote = await records.getQuote(req.params.id);
-    if (quote) {
-      await records.deleteQuote(quote);
-      res.status(204).end();
-    } else {
-      res.status(404).json({ message: "Quote not found." });
-    }
-  } catch (err) {
-    next(err);
-  }
-});
+router.delete("/quotes/:id", asyncHandler( async (req, res, next) => {
+	// throw new Error('Oh noooooooo!');
+	const quote = await records.getQuote(req.params.id);
+	if (quote) {
+		await records.deleteQuote(quote);
+		res.status(204).end();
+	} else {
+		res.status(404).json({ message: "Quote not found." });
+	}
+}));
+
 
 // Send a GET request to /quotes/quote/random to READ(view) a random quote
-// router.get();
+router.get('', );
 
 
 
