@@ -81,7 +81,10 @@ router.delete("/quotes/:id", asyncHandler( async (req, res, next) => {
 
 
 // Send a GET request to /quotes/quote/random to READ(view) a random quote
-router.get('', );
+router.get('/quotes/quote/random', asyncHandler( async (req, res, next) => {
+	const quote = await records.getRandomQuote();
+	res.json(quote);
+}));
 
 
 
