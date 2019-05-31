@@ -17,9 +17,22 @@ app.get('/greetings', (req, res) => {
 	res.json({greeting: 'Hello world!'});
 });
 
+// Send a GET request to READ(view) a list of quotes
 
 
+// Send a GET request to READ(view) a quote
 
+
+// Send a POST request to CREATE a new quote
+
+
+// Send a PUT request to UPDATE a quote
+
+
+// Send a DELETE request to DELETE a quote
+
+
+// Send a GET request to READ(view) a random quote
 
 
 
