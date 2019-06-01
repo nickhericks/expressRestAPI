@@ -2,7 +2,6 @@ const express = require('express');
 const router = express.Router();
 const records = require("./records");
 
-
 // Helper function so that we don't need to add try/catch to every route
 function asyncHandler(cb) {
   return async (req, res, next) => {
@@ -15,13 +14,16 @@ function asyncHandler(cb) {
 }
 
 
-
+// ****************************************
+// Routes
+// ****************************************
 
 // Send a GET request to /quotes to READ(view) a list of quotes
 router.get('/quotes', async (req, res) => {
 	const quotes = await records.getQuotes();
 	res.json(quotes);
 });
+
 
 // Send a GET request to /quotes/:id to READ(view) a quote
 router.get('/quotes/:id', asyncHandler( async (req, res) => {
