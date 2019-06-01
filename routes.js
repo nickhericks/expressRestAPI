@@ -3,7 +3,7 @@ const router = express.Router();
 const records = require("./records");
 
 
-
+// Helper function so that we don't need to add try/catch to every route
 function asyncHandler(cb) {
   return async (req, res, next) => {
     try {
@@ -85,8 +85,6 @@ router.delete("/quotes/:id", asyncHandler( async (req, res, next) => {
 		res.status(404).json({ message: "Quote not found." });
 	}
 }));
-
-
 
 
 module.exports = router;
