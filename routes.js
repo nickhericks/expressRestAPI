@@ -19,8 +19,13 @@ function asyncHandler(cb) {
 // ****************************************
 
 // Send a GET request to /quotes to READ(view) a list of quotes
+// Express .get method takes two arguments
+// first arg is the route we want to handle (when client requests)
+// second arg is callback function to run when request comes in
 router.get('/quotes', async (req, res) => {
 	const quotes = await records.getQuotes();
+	// Usually we respond with a template using res.render
+	// instead we want to send back json so we use res.json
 	res.json(quotes);
 });
 
