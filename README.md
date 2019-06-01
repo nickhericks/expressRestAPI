@@ -1,17 +1,17 @@
 # REST APIs with Express - Full Stack JavaScript Techdegree
 
-## To view project
-1. Download project.
-2. Run 'npm install' in the command line.
-3. Run 'npm start' in the command line.
-4. Go to 'localhost:3000' in your browser.
-
 ## Project objective
 Exercise exploring the basics of building out a REST API with Express, a popular framework written for Node.js.
 
 ## Techniques and concepts
 - Promises
 - Async/Await
+
+## To view project
+1. Download project.
+2. Run 'npm install' in the command line.
+3. Run 'npm start' in the command line.
+4. Go to 'localhost:3000' in your browser.
 
 ## Code example
 ```javascript
